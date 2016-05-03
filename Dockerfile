@@ -27,7 +27,7 @@ WORKDIR $APP_HOME
 # Get current production versions
 RUN curl https://pages.github.com/versions.json > /tmp/pages-versions.json
 RUN cat /tmp/pages-versions.json | jq -r '.ruby' > /tmp/.ruby-version
-RUN cat /tmp/pages-versions.json | jq -r '."github-pages"' > /tmp/.gh-pages-version
+RUN cat /tmp/pages-versions.json | jq -r '.["github-pages"]' > /tmp/.gh-pages-version
 
 # Install RVM
 RUN curl -sSL https://rvm.io/mpapis.asc | gpg --import -
