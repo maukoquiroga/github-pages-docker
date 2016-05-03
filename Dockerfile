@@ -9,9 +9,10 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -qq
 RUN apt-get upgrade -y -o Dpkg::Options::='--force-confold'
 RUN apt-get install -y autoconf automake bison build-essential \
-  curl gawk git-core libffi-dev libgdbm-dev libgmp-dev libncurses5-dev \
-  libreadline6-dev libsqlite3-dev libssl-dev libtool libxslt1-dev \
-  libxml2-dev libyaml-dev pkg-config sqlite3 zlib1g-dev nodejs
+  curl gawk git-core jq libffi-dev libgdbm-dev libgmp-dev \
+  libncurses5-dev libreadline6-dev libsqlite3-dev libssl-dev libtool \
+  libxslt1-dev libxml2-dev libyaml-dev pkg-config sqlite3 zlib1g-dev \
+  nodejs
 
 # Remove temp files
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
